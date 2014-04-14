@@ -1,0 +1,6 @@
+-Sample Java Rest webservice Using Jerssy.
+
+-Technology Stack:
+	-Spring 4
+	-Jersey 2.7
+	-Spring Boot 1.0.1.RELEASE
