@@ -4,3 +4,11 @@
 	-Spring 4
 	-Jersey 2.7
 	-Spring Boot 1.0.1.RELEASE
+	
+
+-Usage:
+    Clone restpoc into work space, do a mvn clean install
+    2- Locate com.test.restpoc.MainApp and run as Java Application
+    3- Navigate to browser and type 127.0.0.1:8080/bootpoc/jerssey 
+    
+    or Run the test case avaiable at com.test.restpoc.SampleServletApplicationTests
