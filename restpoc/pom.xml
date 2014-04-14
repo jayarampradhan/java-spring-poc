@@ -9,6 +9,12 @@
 
 	<name>restpoc</name>
 	<url>http://maven.apache.org</url>
+	<contributors>
+		<contributor>
+			<name>Jayaram Pradhan</name>
+			<email>jayaramimca@gmail.com</email>
+		</contributor>
+	</contributors>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +23,7 @@
 		<spring.framework.version>4.0.3.RELEASE</spring.framework.version>
 		<jersey.spring3.version>2.7</jersey.spring3.version>
 		<slf4j.version>1.6.4</slf4j.version>
-		<spring.boot.version>1.0.1</spring.boot.version>
+		<spring.boot.version>1.0.1.RELEASE</spring.boot.version>
 	</properties>
 
 	<repositories>
@@ -38,8 +44,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>${junit.version}</scope>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -209,63 +215,6 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
-				<version>1.2</version> <configuration> <mainClass>com.hillert.spring.validation.Main</mainClass> 
-				</configuration> </plugin> -->
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.5.v20120716</version>
-				<configuration>
-					<scanintervalseconds>10</scanintervalseconds>
-					<webapp>
-						<contextpath>/${project.artifactId}</contextpath>
-					</webapp>
-					<usetestclasspath>true</usetestclasspath>
-					<stopKey>foo</stopKey>
-					<stopPort>9999</stopPort>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>9090</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
-				</configuration>
-				<executions>
-					<execution>
-						<id>start-jetty</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<scanintervalseconds>0</scanintervalseconds>
-							<daemon>true</daemon>
-						</configuration>
-					</execution>
-					<execution>
-						<id>stop-jetty</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<warsourcedirectory>src/main/webapp</warsourcedirectory>
-					<warname>${project.artifactId}</warname>
-					<failonmissingwebxml>false</failonmissingwebxml>
-					<!-- we must exclude the svn folders -->
-					<warsourceexcludes>
-						<!--[CDATA[**/.svn,**/.svn/**,**/_svn,**/_svn/**]]> </warSourceExcludes -->
-					</warsourceexcludes>
 				</configuration>
 			</plugin>
 		</plugins>
